@@ -11,12 +11,12 @@ key). The auth and database layers do not care — only `app/services.py` would 
 real model.
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+uv venv
+uv pip install -r requirements.txt
 cp .env.example .env          # then paste a real SECRET_KEY — see NOTES.md
 
-python main.py                # http://127.0.0.1:8000/docs
-pytest -q                     # 51 passed
+uv run python main.py         # http://127.0.0.1:8000/docs
+uv run pytest -q              # 51 passed
 ```
 
 ## Also in this repo
